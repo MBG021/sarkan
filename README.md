@@ -16,32 +16,24 @@ Para comenzar, clona este repositorio en tu entorno local:
 git clone https://github.com/MBG021/sarkan
 ``
 
-# Incluir en la carpeta oculta de .gazebo una carpeta llamada sarkan, dentro de la cual incluiremos nuestra carpeta meshes y el archivo model.config
+## Preparación de Archivos
+Incluir en la carpeta oculta `.gazebo` una carpeta llamada `sarkan`, dentro de la cual debes agregar la carpeta `meshes` y el archivo `model.config`.
 
-# Instalación de Dependencias
+## Instalación de Dependencias
+Actualiza el sistema e instala las dependencias necesarias para ROS y Gazebo:
 
-Actualiza el sistema e instala las dependencias necesarias:
-
-$ sudo apt update
-
-$ sudo apt upgrade
-
-$ sudo apt install ros-humble-joint-state-publisher*
-
-$ sudo apt install ros-humble-xacro
-
-$ sudo apt install ros-humble-gazebo-*
-
-$ sudo apt install ros-humble-ackermann-*
-
-$ sudo apt install ros-humble-rosgraph*
-
-$ sudo apt install ros-humble-control*
-
-$ sudo apt install ros-humble-ros2*
-
-$ pip install modern_robotics
-
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install ros-humble-joint-state-publisher*
+sudo apt install ros-humble-xacro
+sudo apt install ros-humble-gazebo-*
+sudo apt install ros-humble-ackermann-*
+sudo apt install ros-humble-rosgraph*
+sudo apt install ros-humble-control*
+sudo apt install ros-humble-ros2*
+pip install modern_robotics
+```
 # Configuración del Entorno
 
 Agrega la siguiente línea a tu archivo .bashrc para asegurarte de que el entorno ROS esté correctamente configurado:
