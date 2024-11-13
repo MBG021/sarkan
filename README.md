@@ -1,13 +1,20 @@
 # SARKAN
-# Smart Autonomus Robotic Kinematic and Adaptive Navigation
-# Descripción del Proyecto
+### Smart Autonomous Robotic Kinematic and Adaptive Navigation
 
+## Descripción del Proyecto
+SARKAN es un sistema de navegación autónoma y teleoperación para un rover, orientado a aplicaciones de exploración en entornos complejos. En este repositorio, se desarrollan y prueban algoritmos de percepción, navegación autónoma y control teleoperado usando **ROS2** y **Gazebo**. 
 
-Aquí se implementarán y probarán diversos algoritmos para navegación autónoma, teleoperación y percepción.
+Este proyecto busca mejorar la adaptabilidad y precisión de la navegación autónoma, aprovechando herramientas avanzadas de simulación y control robótico.
 
-# Clonación del Repositorio
+---
 
-$ git clone https://github.com/MBG021/sarkan
+## Clonación del Repositorio
+
+Para comenzar, clona este repositorio en tu entorno local:
+
+``
+git clone https://github.com/MBG021/sarkan
+``
 
 # Incluir en la carpeta oculta de .gazebo una carpeta llamada sarkan, dentro de la cual incluiremos nuestra carpeta meshes y el archivo model.config
 
