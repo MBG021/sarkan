@@ -1,0 +1,52 @@
+# Define the ros2_controller to be used
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    # This controller is necessary to read the joints' variables
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    ackermann_steering_controller:
+      type: ackermann_steering_controller/AckermannSteeringController
+
+    joint_group_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+
+ackermann_steering_controller:
+  ros__parameters:
+    reference_timeout: 2.0
+    front_steering: true
+    open_loop: false
+    velocity_rolling_window_size: 10
+    position_feedback: false
+    rear_wheels_names: [joint_right_rear_wheel, joint_left_rear_wheel]
+    front_wheels_names: [joint_right_wheel_front, joint_left_wheel_front]
+
+    wheelbase: 0.37266
+    front_wheel_track: 0.430
+    rear_wheel_track: 0.430
+    front_wheels_radius: 0.12
+    rear_wheels_radius: 0.12
+
+    use_stamped_vel: true
+
+
+    odom_frame_id: base_footprint
+    base_frame_id: chasis
+
+joint_group_position_controller:
+  ros__parameters:
+    joints:
+      - ph_shoulder_yaw_joint
+      - ph_shoulder_pitch_joint
+      - ph_elbow_pitch_joint
+      - ph_wrist_pitch_joint
+      - ph_wrist_roll_joint
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <!-- Hardware interface for robot's controller -->
+    <ros2_control  name="GazeboSystem"  type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!-- Define the left wheel joint -->
+        <joint name="joint_left_rear_wheel">
+            <!-- Control the velocity of the left wheel -->
+            <command_interface name="velocity">
+                <param name="min">-10.0</param>
+                <param name="max">10.0</param>
+            </command_interface>
+            <!-- Read the state of the left wheel's velocity -->
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <param name="initial_velocity">0.0</param>
+        </joint>
+
+        <!-- Define the right wheel joint -->
+        <joint name="joint_right_rear_wheel">
+            <!-- Control the velocity of the right wheel -->
+            <command_interface name="velocity">
+                <param name="min">-10.0</param>
+                <param name="max">10.0</param>
+            </command_interface>
+            <!-- Read the state of the right wheel's velocity -->
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+            <param name="initial_velocity">0.0</param>
+        </joint>
+
+        <!-- Define the steering wheel joint (for direction control) -->
+        <joint name="joint_left_wheel_front">
+            <!--<param name="mimic">master_joint</param>-->
+            <param name="multiplier">1</param>
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+        </joint>
+            <!-- Define the steering wheel joint (for direction control) -->
+        <joint name="joint_right_wheel_front">
+            <!--<param name="mimic">master_joint</param>-->
+            <param name="multiplier">1</param>
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+        </joint>
+
+        <!-- Joint 1 can be controlled -->
+        <joint name="ph_shoulder_yaw_joint">
+            <!-- Joint 1's control variable is position -->
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <!-- Joint 1's position can be read-->
+            <state_interface name="position"/>
+            <!-- Joint 1's velocity can be read-->
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+            </joint>
+        
+        <!-- The same goes for every joint -->
+        <joint name="ph_shoulder_pitch_joint">
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+        </joint>
+
+        <joint name="ph_elbow_pitch_joint">
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+        </joint>
+
+        <joint name="ph_wrist_pitch_joint">
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+        </joint>
+
+        <joint name="ph_wrist_roll_joint">
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+        </joint>
+
+        <!--<joint name="ph_gripper_revolute_joint">
+            <command_interface name="position">
+                <param name="min">-1.5708</param>
+                <param name="max">1.5708</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <param name="initial_position">0.0</param>  
+        </joint>-->
+
+    </ros2_control>
+
+    <!-- Load robot's controller -->
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <robotNamespace>sarkan</robotNamespace>
+            <parameters>$(find sarkan)/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot>
