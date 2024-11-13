@@ -12,9 +12,9 @@ Este proyecto busca mejorar la adaptabilidad y precisión de la navegación aut�
 
 Para comenzar, clona este repositorio en tu entorno local:
 
-``
+```bash
 git clone https://github.com/MBG021/sarkan
-``
+```
 
 ## Preparación de Archivos
 Incluir en la carpeta oculta `.gazebo` una carpeta llamada `sarkan`, dentro de la cual debes agregar la carpeta `meshes` y el archivo `model.config`.
@@ -24,51 +24,69 @@ Actualiza el sistema e instala las dependencias necesarias para ROS y Gazebo:
 
 ```bash
 sudo apt update
+```
+```bash
 sudo apt upgrade
+```
+```bash
 sudo apt install ros-humble-joint-state-publisher*
+```
+```bash
 sudo apt install ros-humble-xacro
+```
+```bash
 sudo apt install ros-humble-gazebo-*
+```
+```bash
 sudo apt install ros-humble-ackermann-*
+```
+```bash
 sudo apt install ros-humble-rosgraph*
+```
+```bash
 sudo apt install ros-humble-control*
+```
+```bash
 sudo apt install ros-humble-ros2*
+```
+```bash
 pip install modern_robotics
 ```
-# Configuración del Entorno
 
-Agrega la siguiente línea a tu archivo .bashrc para asegurarte de que el entorno ROS esté correctamente configurado:
+## Configuración del Entorno
 
+Agrega las siguientes líneas a tu archivo `.bashrc` para asegurarte de que el entorno de ROS y Gazebo esté correctamente configurado:
+
+```bash
 source /usr/share/gazebo/setup.bash
-
 source /usr/share/gazebo-11/setup.bash
-
 echo $ROS_PACKAGE_PATH
-
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/ruta/a la carpeta/models/en tu work space/
-
 # Compilación del Proyecto
+```
+## Compilación del Proyecto
 
-Navega al directorio del proyecto y compila con colcon:
+Navega al directorio del proyecto y compila con `colcon`:
 
-$ cd rosbot
-
-$ colcon build
-
-$ source install/setup.bash
-
-# Visualización en RViz
+```bash
+cd sarkan
+colcon build
+source install/setup.bash
+```
+## Visualización en RViz
 
 Para visualizar el rover en RViz, ejecuta el siguiente comando:
 
-$ ros2 launch rosbot rviz_robot.launch.py
-
-# Simulación en Gazebo
+```bash
+ros2 launch rosbot rviz_robot.launch.py
+```
+## Simulación en Gazebo
 
 Para simular el rover en Gazebo, usa el siguiente comando:
 
-$ ros2 launch rosbot urdf_gz.launch.py
-
-# Teleoperacion en gazebo
+```bash
+ros2 launch rosbot urdf_gz.launch.py
+```
+## Teleoperacion en gazebo
 
 ventana 1: ros2 launch rosbot gz_controller.launch.py
 
