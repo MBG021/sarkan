@@ -23,7 +23,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 include_directories(include)
 
 install(
-  DIRECTORY launch config media meshes models sarkan scripts urdf worlds srv
+  DIRECTORY launch config media meshes sarkan scripts urdf worlds srv
   DESTINATION share/${PROJECT_NAME}
 )
 

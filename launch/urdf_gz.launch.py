@@ -17,10 +17,6 @@ pkg_filepath = get_package_share_directory("sarkan")
 xacro_filepath = os.path.join(pkg_filepath, "urdf", "sarkan.urdf.xacro")
 robot_description_file = xacro.process_file(xacro_filepath).toxml()
 
-# Define world file path
-world_file_name = 'empty.world'  # Cambia esto por el nombre de tu archivo de mundo
-world_file_path = os.path.join(pkg_filepath, "worlds", world_file_name)  # Asegúrate de que esta ruta sea correcta
-
 
 # Declare launch arguments
 use_sim_time = LaunchConfiguration("use_sim_time")
@@ -57,7 +53,7 @@ def generate_launch_description():
     )
     
     gazebo_cmd = ExecuteProcess(
-        cmd=["gazebo", "--verbose", "-s", "libgazebo_ros_factory.so", world_file_path],
+        cmd=["gazebo", "--verbose", "-s", "libgazebo_ros_factory.so"],
         output="screen"
     )
     
