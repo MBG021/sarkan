@@ -108,6 +108,6 @@ Para teleoperar el rover en Gazebo, abre varias terminales y ejecuta los siguien
    ros2 run sarkan kinematic_client.py 0.2 0.18 0.3
    ```
    Donde:
-    0,2 es la `X` deseada
-    0,18 es la `Y` deseada
-    0,23 la `Z` deseada
+    0,2 es la `X` deseada,
+    0,18 es la `Y` deseada,
+    0,23 la `Z` deseada,
