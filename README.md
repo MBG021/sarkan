@@ -61,7 +61,6 @@ Agrega las siguientes líneas a tu archivo `.bashrc` para asegurarte de que el e
 source /usr/share/gazebo/setup.bash
 source /usr/share/gazebo-11/setup.bash
 echo $ROS_PACKAGE_PATH
-# Compilación del Proyecto
 ```
 ## Compilación del Proyecto
 
@@ -86,12 +85,22 @@ Para simular el rover en Gazebo, usa el siguiente comando:
 ```bash
 ros2 launch rosbot urdf_gz.launch.py
 ```
-## Teleoperacion en gazebo
+## Teleoperación en Gazebo
 
-ventana 1: ros2 launch rosbot gz_controller.launch.py
+Para teleoperar el rover en Gazebo, abre varias terminales y ejecuta los siguientes comandos:
 
-ventana 2: ros2 run sarkan tepeop_twist_keyboard.py
+1. **Ventana 1**: Inicia el controlador en Gazebo
 
-ventana 3: ros2 run sarkan kinematic_client.py 0.2 0.18 0.3
+   ```bash
+   ros2 launch rosbot gz_controller.launch.py
+
+2. **Ventana 2**: Controla el movimiento del rover con el teclado
+
+   ```bash
+   ros2 run sarkan tepeop_twist_keyboard.py
+
+3. **ventana 3**: Usa el cliente cinemático para enviar coordenadas de destino
+   ```bash
+   ros2 run sarkan kinematic_client.py 0.2 0.18 0.3
 
 Donde 0,2 es la x deseada, 0,18 la y deseada y 0,23 la z deseada.
