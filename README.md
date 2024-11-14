@@ -103,7 +103,8 @@ Para teleoperar el rover en Gazebo, abre varias terminales y ejecuta los siguien
    ```bash
    ros2 run sarkan tepeop_twist_keyboard.py
 
-3. **ventana 3**: Usa el cliente cinemático para enviar coordenadas de destino
+3. **ventana 3**: Control del Manipulador mediante Cinemática Inversa
+
    ```bash
    ros2 run sarkan kinematic_client.py 0.2 0.18 0.3
    ```
