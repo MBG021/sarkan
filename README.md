@@ -115,6 +115,6 @@ Para teleoperar el rover en Gazebo, abre varias terminales y ejecuta los siguien
 Este proyecto utiliza parte del código de [JSOV2001](https://github.com/JSOV2001/phantomx_reactor.git). Agradezco a los autores por su contribución. Las codigo que se utilizaron se encuentran en las rutas: `sarkan/scripts/kinematics_client.py`, `sarkan/scripts/server.py`, `/sarkan/srv/KinematicGoal.srv`, `/sarkan/urdf/phantomx_reactor_core_wrist.xacro`.
 
 Si estás interesado en explorar el repositorio completo, puedes encontrarlo en el siguiente enlace:
-```bash
-https://github.com/JSOV2001/phantomx_reactor.git (https://github.com/JSOV2001/phantomx_reactor.git)
-```
+
+[https://github.com/JSOV2001/phantomx_reactor.git](https://github.com/JSOV2001/phantomx_reactor.git)
+
