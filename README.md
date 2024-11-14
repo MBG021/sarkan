@@ -80,14 +80,14 @@ source install/setup.bash
 Para visualizar el rover en RViz, ejecuta el siguiente comando:
 
 ```bash
-ros2 launch rosbot rviz_robot.launch.py
+ros2 launch sarkan rviz_robot.launch.py
 ```
 ## Simulación en Gazebo
 
 Para simular el rover en Gazebo, usa el siguiente comando:
 
 ```bash
-ros2 launch rosbot urdf_gz.launch.py
+ros2 launch sarkan urdf_gz.launch.py
 ```
 ## Teleoperación en Gazebo
 
@@ -96,7 +96,7 @@ Para teleoperar el rover en Gazebo, abre varias terminales y ejecuta los siguien
 1. **Ventana 1**: Inicia el controlador en Gazebo
 
    ```bash
-   ros2 launch rosbot gz_controller.launch.py
+   ros2 launch sarkan gz_controller.launch.py
 
 2. **Ventana 2**: Controla el movimiento del rover con el teclado
 
@@ -116,5 +116,5 @@ Este proyecto utiliza parte del código de [JSOV2001](https://github.com/JSOV200
 
 Si estás interesado en explorar el repositorio completo, puedes encontrarlo en el siguiente enlace:
 ```bash
-https://github.com/JSOV2001/phantomx_reactor.git
+https://github.com/JSOV2001/phantomx_reactor.git (https://github.com/JSOV2001/phantomx_reactor.git)
 ```
